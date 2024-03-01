@@ -47,6 +47,13 @@ li{
     margin: 5vh 0vh 5vh 5vh;
     padding: 1vh;
     border-radius: 2vw;
+    display: flex;
+    align-items: center;
+}
+
+
+span.material-symbols-outlined{
+margin-left: 0.3rem;
 }
 a.nav-link{
     font-size: 1.5rem;
