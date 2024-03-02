@@ -44,15 +44,14 @@ ul.nav{
 }
 li{
     background-color: var(--body-bg);
-    margin: 5vh 0vh 5vh 5vh;
+    margin: 50px 0vh 50px 50px;
     padding: 1vh;
     border-radius: 2vw;
     display: flex;
     align-items: center;
 }
-
-
 span.material-symbols-outlined{
+font-size: 1.5rem;
 margin-left: 0.3rem;
 }
 a.nav-link{
@@ -61,6 +60,23 @@ a.nav-link{
     text-decoration: none;
     margin-left: 0.8rem;
 }
+
+@media screen and (max-width: 1000px) {
+    html {
+      background-color: grey;
+      font-size: 10px;
+    }
+    li{
+        margin-left: 30px;
+    }
+
+  }
+  @media screen and (max-width: 790px) {
+    html {
+      background-color: rgb(95, 95, 95);
+      font-size: 8px;
+    }
+  }
 /* MAIN */
 main{
     width: 80vw;
