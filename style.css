@@ -17,7 +17,7 @@
 } 
 
 *{
-    /* border: 1px solid white; */
+    /* border: 1px solid gray; */
     margin: 0;
     padding: 0;
 }
@@ -42,7 +42,6 @@ nav{
 ul.nav-tabs{
     width: 100%;
     list-style: none;
-    color: #fff;
 }
 li.nav-item{
     margin: 5vh 0 5vh 2vw;
@@ -51,26 +50,55 @@ li.nav-item{
     border-radius: 100vw 0 0 100vw;
     display: flex;
     align-items: center;
-    color: black;
+    color: var(--text-inv);
 }
+
 span.material-symbols-outlined{
     font-size: 1.5rem;
     margin-left: 0.3rem;
+    transition: transform 1000ms, font-size 1000ms;
 }
 a.nav-link.active,
 li.nav-item.active{
     color: var(--text-def);
 }
+
 a.nav-link{
     font-size: 1.5rem;
     color: var(--text-inv);
     text-decoration: none;
     margin-left: 0.8rem;
+    position: relative;
 }
-/* animations */
+a.nav-link::after {
+    content: "";
+    position: absolute;
+    background-color: var(--text-inv);
+    height: 3px; 
+    width: 0%;
+    left: 50%;
+    bottom: 0;
+    transition: all 450ms ease;
+    transform: scaleX(0);
+}
+li:hover{
+    span.material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 1,
+        'wght' 900,
+        'GRAD' 0,
+        'opsz' 48;
+    }
+    a.nav-link::after {
+        width: 100%;
+        left: 0;
+        transform: scaleX(1);
+    }
+}
+
+/* li-decoration */
 li.nav-item.active{
     background-color: var(--body-bg);
-    color: white;
     position: relative;
 }
 li.nav-item.active::after,
@@ -99,8 +127,6 @@ li.nav-item.active::before{
 
     box-shadow:0.3vw 0.3vw 0 0.3vw var(--body-bg);
 }
-
-
 
 @media screen and (max-width: 1300px) {
     html {
