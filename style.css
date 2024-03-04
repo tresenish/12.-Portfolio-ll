@@ -31,7 +31,7 @@ body{
     display: flex;
 }
 /* <----NAVIGATION----> */
-#logo {
+#logo1 {
     position: relative;
     top: 50%;
     left: 30%;
@@ -39,6 +39,9 @@ body{
 
     max-width: 6rem;
     height: auto;
+}
+#logo2{
+    display: none;
 }
 nav{
     position: fixed;
@@ -49,6 +52,9 @@ nav{
     display: flex;
     align-items: center;
     z-index: 2;
+}
+#dropdown-button{
+    display: none;
 }
 ul.nav-tabs{
     width: 100%;
@@ -147,35 +153,74 @@ li.nav-item.active::before{
 @media screen and (max-width: 850px) {
     html {
         background-color: rgb(61, 61, 61);
-        font-size: 16px;
+        font-size: 10px;
     }
     body{
         display: block;
     }
+    #logo1{
+        display: none;
+    }
+    #logo2{
+        display: block !important;
+        position: absolute;
+        top: 5vh;
+        left: 5vw;
+        width: 5rem;
+        height: auto;
+    }
+    #dropdown-button{
+        display: block;
+        position: absolute;
+        background-color: var(--nav-bg);
+        border: 0;
+        top: 40%;
+        right: 10%;
+        cursor: pointer;
+        transition-duration: 400ms;
+    }
+    #dropdown-button:active{
+        transform: rotate(90deg);
+    }
+    #icon-button{
+        font-size: 4rem;
+    }
     nav{
-        width: 100vw;
-        height: 15vh;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 15vh;
     }
     ul.nav-tabs{
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start; /* Adjust alignment as needed */
+        
+        display: block;
+        position: absolute;
 
+        border: 1px solid green;
+        top: 0;
+        right: 0;
+
+        margin-top: 50% ;
+        width: 40%;
+        background-color: var(--nav-bg);
     }
     li{
         margin: 0;
         padding: 1vw;
-        background-color: aquamarine;
+        width: 100px;
     }
     li.nav-item.active::after,
 li.nav-item.active::before{
     display: none;
 }
     main{
+
         width: 100vw;
         height: 100%;
-        margin: 0;
-        background-color: rgb(66, 34, 34);
+        margin: 0 0 0 0 !important;
+        padding: 30px;
+        background-color: aqua;
     }
 }
 /* <---- MAIN ---->*/
