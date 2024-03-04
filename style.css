@@ -133,7 +133,6 @@ li.nav-item.active::after{
     right: 0;
     border-radius: 0 100vw 0 0;
 
-    /* box-shadow:0.7vw -0.7vw 0 0.7vw red; */
     box-shadow:0.3vw -0.3vw 0 0.3vw var(--body-bg);
     
 }
@@ -247,4 +246,12 @@ span.slogan{
     background-color: var(--text-def);
     color: var(--text-inv);
     padding: 0 1rem;
+}
+img.img-container{
+    max-width: 10rem;
+    height: auto;
+    border-radius: 1.5rem;
+}
+img.img-container:hover{
+    filter: grayscale(1);
 }
