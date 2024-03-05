@@ -161,6 +161,11 @@ li.nav-item.active::before{
     font-size: 12px;
     }
 }
+@media screen and (max-height: 550px) and (max-width: 800px){
+    nav {
+        min-height: 25vh !important;
+    }
+}
 @media screen and (max-width: 850px) {
     html {
         background-color: var(--body-bg);
