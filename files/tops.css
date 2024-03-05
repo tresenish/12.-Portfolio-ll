@@ -20,7 +20,6 @@
     /* border: 1px solid gray; */
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 html{
     font-family: "Roboto", sans-serif;
@@ -36,7 +35,6 @@ body{
     position: relative;
     top: 50%;
     left: 30%;
-    
     bottom: 7vh;
 
     max-width: 6rem;
@@ -53,6 +51,7 @@ body{
 
     font-size: 1.5rem;
     font-family: "Lato", sans-serif;
+
     color: var(--text-inv);
     text-align: center;
 }
@@ -64,7 +63,7 @@ nav{
 
     display: flex;
     align-items: center;
-    z-index: 2;
+    z-index: 10;
 }
 #dropdown-button{
     display: none;
@@ -164,6 +163,7 @@ li.nav-item.active::before{
 }
 @media screen and (max-width: 850px) {
     html {
+        background-color: var(--body-bg);
         font-size: 10px;
     }
     body{
@@ -231,71 +231,146 @@ li.nav-item.active::before{
         
     }
     li.nav-item.active::after,
-    li.nav-item.active::before{
-        display: none;
-    }
+li.nav-item.active::before{
+    display: none;
+}
     main{
+
+        width: 100vw;
+        height: 100%;
         margin: 0 0 0 0 !important;
-        width: 100vw !important;
-        height: 100%;
-    }
-    main::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url(../src/background.png); /* Adjust the path as necessary */
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        opacity: 0.5; /* Adjust opacity as needed */
-        z-index: -1;
+        padding: 30px;
+        background-color: var(--body-bg);
     }
 }
 /* <---- MAIN ---->*/
-main {
-    position: relative;
+main{
     width: 80vw;
     height: 100vh;
     margin-left: 18vw;
     margin-top: 1rem;
-    overflow: hidden;
 }
-
-main::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url(../src/background.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.5;
-    z-index: -1;
-}
-
 /* <---SLOGAN---> */
 h1.slogan{
-position: absolute;
-text-align: center;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
+    text-align: center;
+    margin-top: 2vh;
 font-family: "Nunito", sans-serif;
 font-weight: 600;
 font-size: 4rem;
 color: var(--text-def);
-background-color: var(--text-inv);
 }
 span.slogan{
     background-color: var(--text-def);
     color: var(--text-inv);
     padding: 0 1rem;
 }
+/* <---IMG-CONTAINER---> */
+div.img-container{
+    margin-top: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+    justify-content: space-evenly;
 
+}
+div.element{
+    position: relative;
+    height: 35rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1.5rem;
+    transition-duration: 450ms;
+}
+span.price-tag{
+    position: absolute;
 
+    z-index: 2;
+    width: 5rem;
+    height: 3rem;
+    border-radius: 1.5rem 0 1.5rem 0;
+
+    color: var(--text-inv);
+    font-size: 1.2rem;
+    text-align: center;
+    line-height: 3rem;
+    
+    transition-duration: 450ms;
+
+}
+img.img-container{
+    max-width: 30rem;
+    height: auto;
+    border-radius: 1.5rem;
+    transition-duration: 450ms;
+}
+button.more-info{
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    z-index: 1;
+    height: 3rem;
+    border-radius: 1.5rem;
+    padding: 0.5rem 5rem;
+    border: 0;
+    background-color: var(--text-inv);
+    color: var(--text-def);
+
+    font-size: 1.2rem;
+    text-wrap: nowrap;
+
+    transition-duration: 450ms;
+    cursor: pointer;
+}
+div.info-div{
+    position: absolute;
+    bottom: 0;
+
+    height: 3rem;
+    width: 100%;
+    border-radius: 1.5rem;
+
+    background-color: var(--text-def);
+    color: var(--text-inv);
+
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 3rem;
+    transition-duration: 450ms;
+}
+div.element:hover{
+    background-color: #e8e8e8;
+    img.img-container{
+        opacity: 50%;
+    }
+    button.more-info{
+        display: block;
+    }
+    div.info-div, span.price-tag{
+        background-color: var(--text-inv);
+        color: var(--text-def);
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    div.element{
+        max-height: 31rem;
+    }
+    img.img-container{
+        max-width: 26rem;
+    }
+}
+footer{
+    margin-left: -5vw;
+    width: 100vw;
+    height: 5rem;
+    background-color: var(--text-def);
+
+    font-size: 1rem;
+    line-height: 5rem;
+    color: var(--text-inv);
+    text-align: center;
+
+}
