@@ -326,9 +326,21 @@ button.more-info{
 
     font-size: 1.2rem;
     text-wrap: nowrap;
-
-    transition-duration: 450ms;
+    transition-duration: 250ms;
     cursor: pointer;
+}
+.more-info {
+    background-image: linear-gradient(to right, var(--text-def) 50%, var(--text-inv) 50%);
+    background-size: 210% 105%;
+    background-position: right bottom;
+}
+.more-info:active {
+    color: var(--text-def);
+    background-position: left bottom;
+}
+button.more-info:active{
+    background-color: var(--text-def);
+    color: var(--text-inv);
 }
 div.info-div{
     position: absolute;
