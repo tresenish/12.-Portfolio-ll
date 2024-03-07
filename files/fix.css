@@ -305,3 +305,11 @@ background-color: var(--body-bg);
     font-size: 3.5rem;
     color: yellow;
 }
+#stop-icon{
+    font-size: 3.5rem;
+    color: red;
+}
+#eng-icon{
+    font-size: 3.5rem;
+    color: green;
+}
