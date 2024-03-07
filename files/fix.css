@@ -7,13 +7,6 @@
     --small-text: #8d99ae;
     --big-text: #8d99ae;
     --card-br: #212529;
-
-    /* --nav-bg: #000; 
-    --body-bg: #003566; 
-    --body-bg1: #abc4ff
-    
-     --body-bg1: #3f5efb;
-    */
 } 
 
 *{
@@ -33,28 +26,55 @@ body{
 }
 /* <----NAVIGATION----> */
 #logo1 {
-    position: relative;
-    top: 50%;
-    left: 30%;
-    
-    bottom: 7vh;
-
-    max-width: 6rem;
-    height: auto;
-}
-#logo2{
-    display: none;
-}
-#page-name{
     position: absolute;
-    top: 20%;
+    flex-grow: 1;
+    flex-shrink: 1;
+
     left: 50%;
+    top: 7%;
+    margin: 0.5rem;
+    transform: translate(-50%, -50%);
+
+    width: auto;
+    height: auto;
+    max-width: 10vw;
+    max-height: 10vh;
+}
+#page-name1{
+    position: absolute;
+    flex-grow: 1;
+    flex-shrink: 1;
+
+
+    left: 50%;
+    top: 15%;
+    margin: 0.5rem;
     transform: translate(-50%, -50%);
 
     font-size: 1.5rem;
     font-family: "Lato", sans-serif;
     color: var(--text-inv);
     text-align: center;
+}
+@media screen and (max-height: 700px) {
+    #logo1{
+        top:4%
+    }
+    #page-name1 {
+    font-size: 1rem;
+    top: 12%;
+    }
+}
+@media screen and (max-height: 500px) {
+    #page-name1 {
+    font-size: 0.8rem;
+    }
+}
+#logo2{
+    display: none;
+}
+#page-name2{
+    display: none;
 }
 nav{
     position: fixed;
@@ -166,6 +186,10 @@ li.nav-item.active::before{
     nav {
         min-height: 25vh !important;
     }
+    ul.nav-tabs.is-visible{
+        top: 25vh !important;
+        width: 40%;
+    }
 }
 @media screen and (max-width: 850px) {
     html {
@@ -177,30 +201,38 @@ li.nav-item.active::before{
     #logo1{
         display: none;
     }
+    #page-name1{
+        display: none;
+    }
     #logo2{
         display: block !important;
         position: absolute;
-        top: 5vh;
-        left: 5vw;
+        top: 50%;
+        left: 5rem;
+        transform: translate(-50%, -50%);
         width: 5rem;
         height: auto;
-    }
-    #page-name{
+    }  
+    #page-name2{
+        position: absolute;
+        display: block;
         top: 50%;
-        font-size: 2rem;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: var(--text-inv);
+        font-size: 1.5rem;
+
     }
     #dropdown-button{
         display: block;
         position: absolute;
         background-color: var(--nav-bg);
         border: 0;
-        top: 40%;
-        right: 10%;
+        top: 50%;
+        right: 3rem;
+        transform: translate(-50%, -50%);
         cursor: pointer;
-        transition-duration: 400ms;
-    }
-    #dropdown-button:focus{
-        transform: rotate(90deg);
+
     }
     #icon-button{
         font-size: 4rem;
@@ -255,9 +287,6 @@ main {
     margin-top: 1rem;
     overflow: hidden;
 }
-
-
-
 /* <---SLOGAN---> */
 h1.slogan{
 position: absolute;
@@ -268,7 +297,7 @@ transform: translate(-50%, -50%);
 width: 70vw;
 font-family: "Nunito", sans-serif;
 font-weight: 600;
-font-size: 4rem;
+font-size: 3rem;
 color: var(--text-def);
 background-color: var(--body-bg);
 }
