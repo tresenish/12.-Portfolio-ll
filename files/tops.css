@@ -107,7 +107,7 @@ a.nav-link::after {
     width: 0%;
     left: 50%;
     bottom: 0;
-    transition: all 450ms ease;
+    transition: all 300ms ease;
     transform: scaleX(0);
 }
 li:hover{
@@ -259,10 +259,11 @@ main{
 h1.slogan{
     text-align: center;
     margin-top: 2vh;
-font-family: "Nunito", sans-serif;
-font-weight: 600;
-font-size: 4rem;
-color: var(--text-def);
+    font-family: "Nunito", sans-serif;
+    font-weight: 600;
+    font-size: 4rem;
+    letter-spacing: 5px;
+    color: var(--text-def);
 }
 span.slogan{
     background-color: var(--text-def);
@@ -284,7 +285,13 @@ div.element{
     display: flex;
     flex-direction: column;
     border-radius: 1.5rem;
-    transition-duration: 450ms;
+    transition-duration: 300ms;
+}
+img.img-container{
+    max-width: 30rem;
+    height: auto;
+    border-radius: 1.5rem;
+    transition-duration: 300ms;
 }
 span.price-tag{
     position: absolute;
@@ -300,14 +307,8 @@ span.price-tag{
     text-align: center;
     line-height: 3rem;
     
-    transition-duration: 450ms;
+    transition-duration: 300ms;
 
-}
-img.img-container{
-    max-width: 30rem;
-    height: auto;
-    border-radius: 1.5rem;
-    transition-duration: 450ms;
 }
 button.more-info{
     display: none;
@@ -331,52 +332,74 @@ button.more-info{
 
 
     background-image: linear-gradient(to right, var(--text-def) 50%, var(--text-inv) 50%);
-    background-size: 210% 105%;
+    background-size: 204% 102%;
     background-position: right bottom;
-    transition-duration: 250ms;
+    transition-duration: 300ms;
 
 }
 .arrow-icon{
     vertical-align: middle;
 }   
-button.more-info:active {
-    color: var(--text-def);
-    background-position: left bottom;
-}
-button.more-info:active{
-    background-color: var(--text-def);
+button.more-info:focus {
     color: var(--text-inv);
+    background-position: left bottom;
 }
 div.info-div{
     position: absolute;
     bottom: -1px;
+    left: -0.4%;
 
     height: 3rem;
-    width: 100%;
+    width: 100.8%;
     border-radius: 1.5rem;
 
     background-color: var(--text-def);
     color: var(--text-inv);
 
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     line-height: 3rem;
-    transition-duration: 450ms;
+    font-weight: 200;
+    transition-duration: 300ms;
 }
-div.element:hover{
+div.element::after{/* shadow */
+    display: hidden;
+    bottom: 0;
+    transition-duration: 300ms;
+}
+div.element:hover{ 
     background-color: #e8e8e8;
     img.img-container{
         opacity: 40%;
     }
     button.more-info{
         display: block;
+
     }
     div.info-div, span.price-tag{
         background-color: var(--text-inv);
         color: var(--text-def);
     }
-}
+    div.info-div{
+        border-radius: 0 0 1.5rem 1.5rem;
+    }
+    div.element::after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 50%;
+        right: 0;
+        width: 99%;
+        transform: translate(-50%, -50%);
 
+        bottom: 3rem;
+        height: 3rem;
+        z-index: 1;
+        background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, #e8e8e8 100%);
+        /* background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, #e8e8e8 100%); */
+        transition-duration:300ms ;
+    }
+}
 @media screen and (max-width: 1300px) {
     div.element{
         max-height: 31rem;
@@ -385,6 +408,8 @@ div.element:hover{
         max-width: 26rem;
     }
 }
+/* <---FOOTER---> */
+
 footer{
     display: flex;
     justify-content: center;

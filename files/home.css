@@ -284,23 +284,89 @@ main::before {
     z-index: -1;
 }
 
-/* <---SLOGAN---> */
-h1.slogan{
-position: absolute;
-text-align: center;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-font-family: "Nunito", sans-serif;
-font-weight: 600;
-font-size: 4rem;
-color: var(--text-def);
-background-color: var(--text-inv);
+/* <---SLOGAN---> */ 
+
+
+h1.slogan {
+    position: absolute;
+    display: block;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    width: fit-content;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    border-right: .15em solid orange;
+    white-space: nowrap;
+    margin: 0 auto;
+    font-family: "Nunito", sans-serif;
+    font-weight: 600;
+    font-size: 3rem;
+    color: var(--text-def);
+    letter-spacing: .15em;
 }
-span.slogan{
-    background-color: var(--text-def);
+
+h1.slogan.one {
+    animation: 
+    typingOne 1.8s steps(30, end),
+    blink-caret .75s step-end infinite,
+    fadeOutIn 4s ease-in-out 1.8s infinite;
+}
+
+h1.slogan.two {
+    margin-top: 3.5rem;
+    overflow: hidden;
+    visibility: hidden; /* Initially hide the second line */
+    animation: showTwo 0s 1.8s forwards,
+    typingTwo 1.3s 1.8s steps(20, end),
+    blink-caret .75s 2.5s step-end infinite;
+}
+
+span.slogan.W {
     color: var(--text-inv);
-    padding: 0 1rem;
+    background-color: var(--text-def);
 }
 
+span.slogan.B {
+    color: var(--text-def);
+    background-color: var(--text-inv);
+}
 
+@keyframes typingOne {
+    from { width: 0 }
+    to { width: 30ch }
+}
+
+@keyframes typingTwo {
+    from { width: 0 }
+    to { width: 20ch }
+}
+
+@keyframes showTwo {
+    to { visibility: visible; } /* Show the second line */
+}
+
+@keyframes blink-caret {
+    from, to{ border-color: orange; }
+    50% { border-color: transparent; }
+}
+
+@keyframes fadeOutIn {
+    0%, 100% { border: 0; }
+}
+@media screen and (max-width: 1000px) {
+    h1.slogan {
+
+        font-size: 2rem;
+    }
+  }
+  @media screen and (max-width: 700) {
+    h1.slogan {
+        font-size: 1.8rem;
+    }
+  }
+@media screen and (max-width: 450px) {
+    h1.slogan {
+        font-size: 1.6rem;
+    }
+  }
